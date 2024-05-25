@@ -1,4 +1,8 @@
+const { Cam, promisifiedMethods } = require('./cam');
+const { Discovery } = require('./discovery');
+
 module.exports = {
-	Cam: require('./cam').Cam,
-	Discovery: require('./discovery').Discovery
+	Cam,
+	promisifiedMethods,
+	Discovery,
 };

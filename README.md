@@ -120,40 +120,42 @@ You must subscribe to the `error` event as a device on your network could reply 
 Here some examples:
 
 ```js
-var onvif = require('onvif');
-onvif.Discovery.on('device', function(cam){
+var onvif = require('promises/index');
+onvif.Discovery.on('device', function(cam) {
 // function will be called as soon as NVT responds
-	cam.username = <USERNAME>;
-	cam.password = <PASSWORD>;
-	cam.connect(console.log);
-})
-// Must have an error handler to catch bad replies from the network
-onvif.Discovery.on('error', function (err,xml) {
-  // function called as soon as NVT responds, but this library could not parse the response
-  console.log('Discovery error ' + err);
-});
-onvif.Discovery.probe();
+  cam.username = <USERNAME>;
+    cam.password =
+    <PASSWORD>;
+      cam.connect(console.log);
+      })
+      // Must have an error handler to catch bad replies from the network
+      onvif.Discovery.on('error', function (err,xml) {
+        // function called as soon as NVT responds, but this library could not parse the response
+        console.log('Discovery error ' + err);
+      });
+      onvif.Discovery.probe();
 ```
 
 ```js
-var onvif = require('onvif');
+var onvif = require('promises/index');
 // Must have an error handler to catch bad replies from the network
-onvif.Discovery.on('error', function (err,xml) {
+onvif.Discovery.on('error', function(err, xml) {
   console.log('Discovery error ' + err);
 });
 onvif.Discovery.probe(function(err, cams) {
 // function will be called only after timeout (5 sec by default)
-	if (err) { 
+  if (err) {
     // There is a device on the network returning bad discovery data
     // Probe results will be incomplete
     throw err;
   }
-	cams.forEach(function(cam) {
-		cam.username = <USERNAME>;
-		cam.password = <PASSWORD>;
-		cam.connect(console.log);
-	});
-});
+  cams.forEach(function(cam) {
+    cam.username = <USERNAME>;
+      cam.password =
+      <PASSWORD>;
+        cam.connect(console.log);
+        });
+        });
 ```
 
 In all of that cases you've got disconnected cameras. To access each camera (and issue ONVIF commands) you normally need
@@ -203,7 +205,7 @@ onvif.Discovery.probe();
 ## Cam class
 
 ```javascript
-const Cam = require('onvif').Cam;
+const Cam = require('promises/index').Cam;
 ```
 
 ## new Cam(options, callback)

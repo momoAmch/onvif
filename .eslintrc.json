@@ -1,11 +1,19 @@
 {
-  "extends": ["eslint:recommended", "plugin:node/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
   "env": {
+    "browser" : false,
     "node": true,
     "mocha": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2021
+  },
   "rules": {
     "node/no-deprecated-api": 0,
+    "node/no-unsupported-features/es-syntax": 0,
     "no-console": 0,
     "no-param-reassign": 0,
     "no-unused-vars": [
@@ -59,13 +67,6 @@
         "afterColon": true
       }
     ],
-    "indent": [
-      2,
-      "tab",
-      {
-        "SwitchCase": 1
-      }
-    ],
     "no-mixed-spaces-and-tabs": 2,
     "camelcase": [
       2,
@@ -73,6 +74,30 @@
         "properties": "never"
       }
     ],
-    "semi": "error"
-  }
+    "semi": "error",
+    "object-curly-spacing": ["error", "always"]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "plugins": [
+        "@typescript-eslint"
+      ],
+      "env": {
+        "node": true
+      },
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended"
+      ],
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "sourceType": "module",
+        "es6": true,
+        "ecmaVersion": 2021,
+        "project": ["./tsconfig.json"]
+      }
+    }
+  ]
 }
