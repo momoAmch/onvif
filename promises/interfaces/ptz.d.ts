@@ -1,3 +1,14 @@
+import {
+    AuxiliaryData, PresetTour,
+    PTZConfiguration,
+    PTZConfigurationOptions,
+    PTZNode,
+    PTZPreset, PTZPresetTourOperation, PTZPresetTourOptions,
+    PTZSpeed,
+    StringList
+} from "./onvif";
+import {GeoLocation, PTZStatus, PTZVector, ReferenceToken} from "./common";
+
 export interface Capabilities {
     /** Indicates whether or not EFlip is supported. */
     EFlip?: boolean;
