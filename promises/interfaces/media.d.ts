@@ -1,3 +1,16 @@
+import { ReferenceToken } from "./common";
+import {
+    AudioDecoderConfiguration, AudioDecoderConfigurationOptions,
+    AudioEncoderConfiguration, AudioEncoderConfigurationOptions,
+    AudioOutput, AudioOutputConfiguration, AudioOutputConfigurationOptions,
+    AudioSource, AudioSourceConfiguration, AudioSourceConfigurationOptions,
+    Description, MediaUri, MetadataConfiguration, MetadataConfigurationOptions, Name,
+    OSDConfiguration, OSDConfigurationOptions, Profile, StreamSetup,
+    StringList, VideoAnalyticsConfiguration, VideoEncoderConfiguration, VideoEncoderConfigurationOptions,
+    VideoResolution,
+    VideoSource, VideoSourceConfiguration, VideoSourceConfigurationOptions
+} from "./onvif";
+
 export interface Capabilities {
     /** Indicates if GetSnapshotUri is supported. */
     snapshotUri?: boolean;
