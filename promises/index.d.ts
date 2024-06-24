@@ -1,12 +1,12 @@
 /// <reference path="interfaces/devicemgmt.d.ts"/>
 
-import { NetworkGateway, OSDConfiguration, PTZPreset } from "./interfaces/onvif";
+import { MediaUri, NetworkGateway, OSDConfiguration, PTZPreset } from "./interfaces/onvif";
 import { GetDeviceInformationResponse } from "./interfaces/devicemgmt";
 import { SecureContextOptions } from 'node:tls';
 import { Agent } from 'node:http';
 import { GetPresets, GetPresetsResponse } from "./interfaces/ptz";
 import { UUID } from "node:crypto";
-import { GetOSDs } from "./interfaces/media";
+import { Capabilities as MediaCapabilities, GetOSDs, GetSnapshotUri } from "./interfaces/media";
 
 // declare module "onvif/promises" {
   /**
@@ -58,7 +58,10 @@ export class Cam {
     /// ptz
     getPresets(options?: GetPresets): Promise<PTZPreset[]>
     /// media
+    getMediaServiceCapabilities(): Promise<MediaCapabilities>;
+    // getProfiles(): Promise<>;
     getOSDs(options?: GetOSDs): Promise<OSDConfiguration[]>;
+    getSnapshotUri(options?: GetSnapshotUri): Promise<MediaUri>;
   }
 
   export interface DiscoveyOptions {
