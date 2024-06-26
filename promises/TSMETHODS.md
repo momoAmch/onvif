@@ -62,14 +62,14 @@
 - [ ] addVideoSourceConfiguration
 - [ ] removeAudioEncoderConfiguration
 - [ ] removeAudioSourceConfiguration
-- [ ] getProfiles
+- [x] getProfiles
 - [ ] createProfile
 - [ ] deleteProfile
 - [ ] getStreamUri
-- [ ] getSnapshotUri
+- [x] getSnapshotUri
 - [ ] setSynchronizationPoint
-- [ ] getOSDs
-- [ ] getOSDOptions (changed: OSDConfiguration[])
+- [x] getOSDs (changed: OSDConfiguration[])
+- [x] getOSDOptions (changed: OSDConfigurationOptions)
 - [ ] createOSD
 - [ ] setOSD
 - [ ] deleteOSD
